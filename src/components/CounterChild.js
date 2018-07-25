@@ -6,12 +6,11 @@ export default class CounterChild extends React.Component {
         super(props);
 
         this.state = {
-            title: props.title,
             count: props.initValue
         }
     }
 
-    incrementCount (){
+    incrementCount =()=>{
         const previousValue = this.state.count
         const newValue = previousValue + 1
         this.setState({
@@ -20,7 +19,7 @@ export default class CounterChild extends React.Component {
         this.props.updateCount(previousValue, newValue)
     }
 
-    decrementCount() {
+    decrementCount=() =>{
         const previousValue = this.state.count
         const newValue = previousValue - 1
         this.setState({
@@ -32,9 +31,9 @@ export default class CounterChild extends React.Component {
     render() {
         return (
             <div>
-                <button style={{ margin: 10 }} onClick={this.incrementCount.bind(this)}>+</button>
-                <button style={{ margin: 10 }} onClick={this.decrementCount.bind(this)}>-</button>
-                <span>{this.state.title} count: {this.state.count}</span>
+                <button style={{ margin: 10 }} onClick={this.incrementCount}>+</button>
+                <button style={{ margin: 10 }} onClick={this.decrementCount}>-</button>
+                <span>{this.props.title} count: {this.state.count}</span>
             </div>
         )
     }
