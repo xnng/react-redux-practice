@@ -10,18 +10,17 @@ export default class CounterChild extends React.Component {
         }
     }
 
-    incrementCount =()=>{
-        const previousValue = this.state.count
-        const newValue = previousValue + 1
-        this.setState({
-            count: newValue
-        })
-        this.props.updateCount(previousValue, newValue)
+    incrementCount = () => {
+        this.creamentCount(true)
     }
 
-    decrementCount=() =>{
+    decrementCount = () => {
+        this.creamentCount(false)
+    }
+
+    creamentCount(flag) {
         const previousValue = this.state.count
-        const newValue = previousValue - 1
+        const newValue = flag ? previousValue + 1 : previousValue - 1
         this.setState({
             count: newValue
         })
