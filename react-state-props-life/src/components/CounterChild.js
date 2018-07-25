@@ -3,6 +3,7 @@ import React from 'react'
 export default class CounterChild extends React.Component {
 
     constructor(props) {
+        console.log('constructor()')
         super(props);
 
         this.state = {
@@ -27,7 +28,33 @@ export default class CounterChild extends React.Component {
         this.props.updateCount(previousValue, newValue)
     }
 
+    componentWillMount() {
+        console.log('componentWillMount()')
+    }
+
+    componentDidMount() {
+        console.log('componentDidMount()')
+    }
+
+    componentWillReceiveProps(props) {
+        console.log('componentWillReceiveProps(): ' + props.title)
+    }
+
+    shouldComponentUpdate() {
+        console.log('shouldComponentUpdate()')
+        return true
+    }
+
+    componentWillUpdate() {
+        console.log('componentWillUpdate()')
+    }
+
+    componentDidUpdate() {
+        console.log('componentDidUpdate()')
+    }
+
     render() {
+        console.log('render()')
         return (
             <div>
                 <button style={{ margin: 10 }} onClick={this.incrementCount}>+</button>

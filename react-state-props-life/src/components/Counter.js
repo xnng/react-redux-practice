@@ -15,7 +15,7 @@ export default class Counter extends React.Component {
     }
   }
 
-  updateCount =(previousValue, newValue)=>{
+  updateCount = (previousValue, newValue) => {
     const changeValue = newValue - previousValue
     this.setState({
       sum: this.state.sum + changeValue
