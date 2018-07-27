@@ -15,7 +15,7 @@ export default class Record extends Component {
 }
 
 Record.propTypes = {
-    id: PropTypes.number,
+    id: PropTypes.string,
     date: PropTypes.string,
     title: PropTypes.string,
     amount: PropTypes.number

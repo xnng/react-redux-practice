@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Record from './Record';
-// import { getJSON } from 'jquery';
 import * as RecordsAPI from '../utils/RecordsAPI'
+import RecordForm from './RecordForm'
 
 class Records extends Component {
   constructor() {
@@ -12,21 +12,6 @@ class Records extends Component {
       records: []
     }
   }
-
-  // jquery ajax
-  // componentDidMount() {
-  //   getJSON("https://5b5a93b350bab80014e5f79c.mockapi.io/api/v1/records")
-  //     .then(
-  //       response => this.setState({
-  //         records: response,
-  //         isLoaded: true
-  //       }),
-  //       error => this.setState({
-  //         isLoaded: true,
-  //         error
-  //       })
-  //     )
-  // }
 
   componentDidMount() {
     RecordsAPI.getAll().then(
@@ -42,16 +27,22 @@ class Records extends Component {
     )
   }
 
+  addRecord(record) {
+    // this.setState({records: this.state.records.concat(record)})
+    this.setState({ records: [...this.state.records, record] })
+  }
+
   render() {
     const { error, isLoaded, records } = this.state;
+    let recordsComponents;
+
     if (error) {
-      return <div>Error: {error.message}</div>
+      recordsComponents = <div>Error: {error.message}</div>
     } else if (!isLoaded) {
-      return <div>Loading...</div>
+      recordsComponents = <div>Loading...</div>
     } else {
-      return (
-        <div className="container">
-          <h1>Records</h1>
+      recordsComponents = (
+        <div>
           <table className="table table-bordered">
             <thead>
               <tr>
@@ -65,8 +56,15 @@ class Records extends Component {
             </tbody>
           </table>
         </div>
-      );
+      )
     }
+    return (
+      <div className="container">
+        <h2 className="mt-5">Records</h2>
+        <RecordForm handleNewRecord={this.addRecord.bind(this)} />
+        {recordsComponents}
+      </div>
+    )
   }
 }
 
