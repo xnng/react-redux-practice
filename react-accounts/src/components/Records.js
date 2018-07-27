@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Record from './Record';
 // import { getJSON } from 'jquery';
-import axios from 'axios'
+import * as RecordsAPI from '../utils/RecordsAPI'
 
 class Records extends Component {
   constructor() {
@@ -29,18 +29,17 @@ class Records extends Component {
   // }
 
   componentDidMount() {
-    axios.get("https://5b5a93b350bab80014e5f79c.mockapi.io/api/v1/recordss")
-      .then(
-        response => this.setState({
-          records: response.data,
-          isLoaded: true
-        })
-      ).catch(
-        error => this.setState({
-          isLoaded: true,
-          error
-        })
-      )
+    RecordsAPI.getAll().then(
+      response => this.setState({
+        records: response.data,
+        isLoaded: true
+      })
+    ).catch(
+      error => this.setState({
+        isLoaded: true,
+        error
+      })
+    )
   }
 
   render() {
