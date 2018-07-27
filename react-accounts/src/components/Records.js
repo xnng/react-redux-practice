@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Record from './Record';
-import { getJSON } from 'jquery';
+// import { getJSON } from 'jquery';
+import axios from 'axios'
 
 class Records extends Component {
   constructor() {
@@ -12,13 +13,29 @@ class Records extends Component {
     }
   }
 
+  // jquery ajax
+  // componentDidMount() {
+  //   getJSON("https://5b5a93b350bab80014e5f79c.mockapi.io/api/v1/records")
+  //     .then(
+  //       response => this.setState({
+  //         records: response,
+  //         isLoaded: true
+  //       }),
+  //       error => this.setState({
+  //         isLoaded: true,
+  //         error
+  //       })
+  //     )
+  // }
+
   componentDidMount() {
-    getJSON("https://5b5a93b350bab80014e5f79c.mockapi.io/api/v1/records")
+    axios.get("https://5b5a93b350bab80014e5f79c.mockapi.io/api/v1/recordss")
       .then(
         response => this.setState({
-          records: response,
+          records: response.data,
           isLoaded: true
-        }),
+        })
+      ).catch(
         error => this.setState({
           isLoaded: true,
           error
@@ -27,14 +44,15 @@ class Records extends Component {
   }
 
   render() {
-    const { error, isLoaded, records} = this.state;
+    const { error, isLoaded, records } = this.state;
     if (error) {
-      return <div>Error: {error.responseText}</div>
+      return <div>Error: {error.message}</div>
     } else if (!isLoaded) {
       return <div>Loading...</div>
     } else {
       return (
         <div className="container">
+          <h1>Records</h1>
           <table className="table table-bordered">
             <thead>
               <tr>
