@@ -57,7 +57,7 @@ export default class RecordForm extends Component {
                     <input type="text" className="form-control" onChange={this.handleChange} placeholder="Title" value={this.state.title} name="title" />
                 </div>
                 <div className="form-group mr-2">
-                    <input type="text" className="form-control" onChange={this.handleChange} placeholder="Amount" value={this.state.amount} name="amount" />
+                    <input type="number" className="form-control" onChange={this.handleChange} placeholder="Amount" value={this.state.amount} name="amount" />
                 </div>
                 <button type="submit" className="btn btn-primary" disabled={!this.valid()}>Create Record</button>
             </form>

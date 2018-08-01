@@ -49,6 +49,7 @@ class Records extends Component {
                 <th>Date</th>
                 <th>Title</th>
                 <th>Amount</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
