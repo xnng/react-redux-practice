@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class RecordTable extends Component {
     render() {
         return (
             <tr>
-                <td>{this.props.record.date}</td>
-                <td>{this.props.record.title}</td>
-                <td>{this.props.record.amount}</td>
+                <td>{this.props.date}</td>
+                <td>{this.props.title}</td>
+                <td>{this.props.amount}</td>
                 <td>
                     <div className="btn-group">
                         <button type="button" className="btn btn-sm btn-info"><i className="fa fa-pencil" /></button>
@@ -16,4 +17,11 @@ export default class RecordTable extends Component {
             </tr>
         )
     }
+}
+
+RecordTable.propTypes = {
+    id: PropTypes.string,
+    date: PropTypes.string,
+    title: PropTypes.string,
+    amount: PropTypes.number,
 }

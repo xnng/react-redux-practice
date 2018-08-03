@@ -39,7 +39,7 @@ export default class RecordForm extends Component {
             },
             this.setState({
                 date: '',
-                title: '',
+                title: '',  
                 amount: ''
             })
         ).catch(
