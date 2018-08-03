@@ -13,22 +13,39 @@ export default class RecordForm extends Component {
         }
     }
 
-    handleChange = (e) => {
-        this.setState({date: e.target.value});
+    handleChange = (event) => {
+        let name, obj;
+        name = event.target.name;
+        this.setState((
+            obj = {},
+            obj["" + name] = event.target.value,
+            obj
+        ))
+
     }
 
 
-    handleSubmit = (e) => {
-        e.preventDefault();
+    handleSubmit = (event) => {
+        event.preventDefault();
 
-        const data = this.state;
+        const data = {
+            date: this.state.date,
+            title: this.state.title,
+            amount: Number.parseInt(this.state.amount, 0)
+        }
 
         RecordsAPI.create(data).then(
-            response => console.log(response.data)
+            response => {
+                this.props.handleNewRecord(response.data);
+                this.setState({
+                    date: '',
+                    title: '',
+                    amount: ''
+                })
+            }
         ).catch(
             error => console.log(error.message)
         )
-
     }
 
     render() {
@@ -36,13 +53,13 @@ export default class RecordForm extends Component {
             <div className="row">
                 <form className="form-inline mt-3" onSubmit={this.handleSubmit}>
                     <div className="form-group ml-3">
-                        <input className="form-control" onChange={this.handleChange} type="text" placeholder="date" name="date" required />
+                        <input className="form-control " onChange={this.handleChange} type="text" value={this.state.date} placeholder="date" name="date" required />
                     </div>
                     <div className="form-group ml-3">
-                        <input className="form-control" onChange={this.handleChange} type="text" placeholder="title" name="title" required />
+                        <input className="form-control" onChange={this.handleChange} type="text" value={this.state.title} placeholder="title" name="title" required />
                     </div>
                     <div className="form-group ml-3">
-                        <input className="form-control" onChange={this.handleChange} type="number" placeholder="amount" name="amount" required />
+                        <input className="form-control" onChange={this.handleChange} type="number" value={this.state.amount} placeholder="amount" name="amount" required />
                     </div>
                     <div className="form-group ml-3">
                         <button className="btn btn-primary" type="submit">Create Record</button>

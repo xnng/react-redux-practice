@@ -28,18 +28,25 @@ export default class Records extends Component {
     )
   }
 
+  addRecord = (record) => {
+    this.setState({
+      records: [...this.state.records, record]
+    })
+  }
+
+
   render() {
     const { error, isLoad } = this.state;
 
     if (error) {
       return (
-        <div class="alert alert-danger container mt-3">
+        <div className="alert alert-danger container mt-3">
           Error: {error}
         </div>
       )
     } else if (!isLoad) {
       return (
-        <div class="alert alert-info container mt-3">
+        <div className="alert alert-info container mt-3">
           Loading ...
         </div>
       )
@@ -49,7 +56,7 @@ export default class Records extends Component {
           <nav className="navbar navbar-light bg-light mt-3">
             <span className="navbar-brand h1">Records</span>
           </nav>
-          <RecordForm />
+          <RecordForm handleNewRecord={this.addRecord} />
           <div className="table-responsive">
             <table className="table table-striped mt-3">
               <thead>

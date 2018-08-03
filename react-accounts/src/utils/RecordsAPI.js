@@ -6,5 +6,5 @@ export const getAll = () =>
     axios.get(`${api}/v1/records`)
 
 export const create = (data) =>
-    axios.post(`${api}/v1/records/`)
+    axios.post(`${api}/v1/records/`, data)
 
