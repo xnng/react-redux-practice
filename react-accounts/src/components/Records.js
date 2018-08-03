@@ -40,14 +40,14 @@ export default class Records extends Component {
 
     if (error) {
       return (
-        <div className="alert alert-danger container mt-3">
-          Error: {error}
+        <div className="mx-auto col-md-3 col-6 mt-5 text-danger">
+          <i className="fa fa-warning"></i> Error: {error}
         </div>
       )
     } else if (!isLoad) {
       return (
-        <div className="alert alert-info container mt-3">
-          Loading ...
+        <div className="mx-auto col-md-2 col-4 mt-5 text-info">
+          <i className="fa fa-spinner fa-spin"></i> Loading...
         </div>
       )
     } else {

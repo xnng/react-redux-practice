@@ -54,8 +54,8 @@ export default class RecordTable extends Component {
                 </td>
                 <td>
                     <div className="btn-group">
-                        <button type="button" className="btn btn-sm btn-info"><i className="fa fa-check" /></button>
-                        <button type="button" className="btn btn-sm btn-danger" onClick={this.handleToggle}><i className="fa fa-close" /></button>
+                        <button type="button" className="btn btn-sm btn-success"><i className="fa fa-check" /></button>
+                        <button type="button" className="btn btn-sm btn-secondary" onClick={this.handleToggle}><i className="fa fa-close" /></button>
                     </div>
                 </td>
             </tr>
