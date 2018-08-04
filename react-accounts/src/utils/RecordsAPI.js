@@ -7,4 +7,3 @@ export const getAll = () =>
 
 export const create = (data) =>
     axios.post(`${api}/v1/records/`, data)
-

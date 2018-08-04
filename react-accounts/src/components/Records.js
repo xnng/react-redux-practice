@@ -34,7 +34,6 @@ export default class Records extends Component {
     })
   }
 
-
   render() {
     const { error, isLoad } = this.state;
 
@@ -57,21 +56,19 @@ export default class Records extends Component {
             <span className="navbar-brand h1">Records</span>
           </nav>
           <RecordForm handleNewRecord={this.addRecord} />
-          <div className="table-responsive">
-            <table className="table table-striped mt-3">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Title</th>
-                  <th>Amount</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.state.records.map((record) => <RecordTable {...record} key={record.id} />)}
-              </tbody>
-            </table>
-          </div>
+          <table className="table mt-3">
+            <thead>
+              <tr>
+                <th className="w-25">Date</th>
+                <th className="w-25">Title</th>
+                <th className="w-25">Amount</th>
+                <th className="w-25">Actions</th>
+              </tr>
+            </thead>
+            <tbody className="w-100">
+              {this.state.records.map((record) => <RecordTable {...record} key={record.id} />)}
+            </tbody>
+          </table>
         </div>
       )
     }
