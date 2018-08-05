@@ -2,7 +2,7 @@
 
 ### 演示
 
-![](https://xings.oss-cn-shanghai.aliyuncs.com/image/js-full-stack/counter.gif)
+![](../images/counter.gif)
 
 ### 在线预览
 
@@ -24,7 +24,7 @@ React
 
 ### 演示
 
-![](https://xings.oss-cn-shanghai.aliyuncs.com/image/js-full-stack/records.gif)
+![](./images/records.gif)
 
 ### 在线预览
 
