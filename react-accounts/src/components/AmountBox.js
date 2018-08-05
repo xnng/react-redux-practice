@@ -1,18 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class AmountBox extends Component {
-    render() {
-        return (
-            <div className="col-md-4 col-4">
-                <div className="card">
-                    <div className={`card-header bg-${this.props.bgColor} text-white`}>
-                        {this.props.title}
-                    </div>
-                    <div className="card-body">
-                        {this.props.amount}
-                    </div>
+const AmountBox = ({ title, bgColor, amount }) => {
+    return (
+        <div className="col-md-4 col-4">
+            <div className="card">
+                <div className={`card-header bg-${bgColor} text-white`}>
+                    {title}
+                </div>
+                <div className="card-body">
+                    {amount}
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
+
+export default AmountBox;
+
