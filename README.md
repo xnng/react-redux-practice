@@ -6,7 +6,7 @@
 
 ### 在线预览
 
-https://bgrc.github.io/react-vue-full-stack/counters/preview/
+https://bgrc.github.io/react-vue-full-stack/react-counters/preview/
 
 ### 技术栈
 
