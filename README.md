@@ -2,7 +2,9 @@
 
 ### 演示
 
-![](./images/counter.gif)
+<p align='center'>
+<img src='./images/counter.gif' width='600' alt='npm start'>
+</p>
 
 ### 在线预览
 
@@ -24,7 +26,9 @@ React
 
 ### 演示
 
-![](./images/records.gif)
+<p align='center'>
+<img src='./images/records.gif' width='600' alt='npm start'>
+</p>
 
 ### 在线预览
 
@@ -45,6 +49,8 @@ React + Axios + Bootstrap 4 + Font Awesome + MockAPI
 - 如何在页面上显示 Loading 和 Error 状态
 
 - 如何创建无状态组件
+
+- 如何使用 prop-types 进行属性类型检查
 
 - 如何使用 Axios 发送 Ajax
 
