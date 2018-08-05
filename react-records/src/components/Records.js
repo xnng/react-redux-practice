@@ -108,7 +108,7 @@ export default class Records extends Component {
       return (
         <div className="container">
           <nav className="navbar navbar-light bg-light mt-3">
-            <span className="navbar-brand h1">Records</span>
+            <span className="navbar-brand h1">React-Records</span>
           </nav>
           <div className="row mt-3">
             <AmountBox title="Income" bgColor="success" amount={this.income()} />
