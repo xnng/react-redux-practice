@@ -24,7 +24,7 @@ export default class RecordTable extends Component {
             title: this.refs.title.value,
             amount: Number.parseInt(this.refs.amount.value, 0)
         }
-        
+
         RecordsAPI.update(this.props.record.id, data).then(
             response => {
                 this.props.handleUpdateRecord(this.props.record, response.data)
@@ -32,6 +32,14 @@ export default class RecordTable extends Component {
                     edit: !this.state.edit
                 });
             }
+        ).catch(
+            error => console.log(error.message)
+        )
+    }
+
+    handleDelete = () => {
+        RecordsAPI.remove(this.props.record.id).then(
+            this.props.handleDeleteRecord(this.props.record)
         ).catch(
             error => console.log(error.message)
         )
@@ -49,7 +57,7 @@ export default class RecordTable extends Component {
                         <button type="button" className="btn btn-sm btn-info" onClick={this.handleToggle}>
                             <i className="fa fa-pencil" />
                         </button>
-                        <button type="button" className="btn btn-sm btn-danger">
+                        <button type="button" className="btn btn-sm btn-danger" onClick={this.handleDelete}>
                             <i className="fa fa-trash" />
                         </button>
                     </div>
