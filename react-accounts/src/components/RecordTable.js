@@ -45,7 +45,6 @@ export default class RecordTable extends Component {
         )
     }
 
-
     recordRow() {
         return (
             <tr>

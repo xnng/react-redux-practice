@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RecordForm from './RecordForm';
 import RecordTable from './RecordTable';
+import AmountBox from './AmountBox'
 import * as RecordsAPI from '../utils/RecordsAPI'
 
 export default class Records extends Component {
@@ -10,7 +11,8 @@ export default class Records extends Component {
     this.state = {
       error: null,
       isLoad: false,
-      records: []
+      records: [],
+      amount: ''
     }
   }
 
@@ -63,7 +65,29 @@ export default class Records extends Component {
     });
   }
 
+  income = () => {
+    let income = this.state.records.filter((item) => {
+      return item.amount >= 0
+    })
 
+    return income.reduce((prev, curr) => {
+      return prev + curr.amount
+    }, 0)
+  }
+
+  debit() {
+    let income = this.state.records.filter((item) => {
+      return item.amount < 0
+    })
+
+    return income.reduce((prev, curr) => {
+       return prev + curr.amount
+    }, 0)
+  }
+
+  total() {
+    return this.income() + this.debit()
+  }
 
   render() {
     const { error, isLoad, records } = this.state;
@@ -86,6 +110,11 @@ export default class Records extends Component {
           <nav className="navbar navbar-light bg-light mt-3">
             <span className="navbar-brand h1">Records</span>
           </nav>
+          <div className="row mt-3">
+            <AmountBox title="Income" bgColor="success" amount={this.income()} />
+            <AmountBox title="Debit" bgColor="danger" amount={this.debit()} />
+            <AmountBox title="Total" bgColor="info" amount={this.total()} />
+          </div>
           <RecordForm handleNewRecord={this.addRecord} />
           <table className="table mt-3">
             <thead>
