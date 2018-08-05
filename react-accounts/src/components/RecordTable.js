@@ -50,7 +50,7 @@ export default class RecordTable extends Component {
             <tr>
                 <td>{this.props.record.date}</td>
                 <td>{this.props.record.title}</td>
-                <td>{this.props.record.amount}</td>
+                <td>💴 {this.props.record.amount}</td>
                 <td>
                     <div className="btn-group">
                         <button type="button" className="btn btn-sm btn-info" onClick={this.handleToggle}>
