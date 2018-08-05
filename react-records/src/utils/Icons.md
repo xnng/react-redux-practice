@@ -2,7 +2,7 @@
 
 >http://fontawesome.dashgame.com/
 
-CDN: <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+CDN: `<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">`
 
 ```html
 √         <i className="fa fa-check" />
