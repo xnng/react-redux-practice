@@ -34,6 +34,27 @@ export default class Records extends Component {
     })
   }
 
+  updateRecord = (preRecord, newRecord) => {
+    const recordIndex = this.state.records.indexOf(preRecord);
+    const newRecords = this.state.records.map((item, index) => {
+      if (index !== recordIndex) {
+        // This isn't the item we care about - keep it as-is
+        return item;
+      }
+
+      // Otherwise, this is the one we want - return an updated value
+      return {
+        ...item,
+        ...newRecord
+      }
+    });
+
+    this.setState({
+      records: newRecords
+    });
+  }
+
+
   render() {
     const { error, isLoad } = this.state;
 
@@ -66,7 +87,7 @@ export default class Records extends Component {
               </tr>
             </thead>
             <tbody className="w-100">
-              {this.state.records.map((record) => <RecordTable {...record} key={record.id} />)}
+              {this.state.records.map((record) => <RecordTable record={record} key={record.id} handleUpdateRecord={this.updateRecord} />)}
             </tbody>
           </table>
         </div>

@@ -24,9 +24,14 @@ export default class RecordTable extends Component {
             title: this.refs.title.value,
             amount: Number.parseInt(this.refs.amount.value, 0)
         }
-
-        RecordsAPI.update(this.props.id, data).then(
-            response => console.log(response.data)
+        
+        RecordsAPI.update(this.props.record.id, data).then(
+            response => {
+                this.props.handleUpdateRecord(this.props.record, response.data)
+                this.setState({
+                    edit: !this.state.edit
+                });
+            }
         ).catch(
             error => console.log(error.message)
         )
@@ -36,9 +41,9 @@ export default class RecordTable extends Component {
     recordRow() {
         return (
             <tr>
-                <td>{this.props.date}</td>
-                <td>{this.props.title}</td>
-                <td>{this.props.amount}</td>
+                <td>{this.props.record.date}</td>
+                <td>{this.props.record.title}</td>
+                <td>{this.props.record.amount}</td>
                 <td>
                     <div className="btn-group">
                         <button type="button" className="btn btn-sm btn-info" onClick={this.handleToggle}>
@@ -58,17 +63,17 @@ export default class RecordTable extends Component {
             <tr>
                 <td>
                     <div className="input-group input-group-sm">
-                        <input type="text" className="form-control input-group-prepend" defaultValue={this.props.date} ref="date" />
+                        <input type="text" className="form-control input-group-prepend" defaultValue={this.props.record.date} ref="date" />
                     </div>
                 </td>
                 <td>
                     <div className="input-group input-group-sm">
-                        <input type="text" className="form-control input-group-prepend" defaultValue={this.props.title} ref="title" />
+                        <input type="text" className="form-control input-group-prepend" defaultValue={this.props.record.title} ref="title" />
                     </div>
                 </td>
                 <td>
                     <div className="input-group input-group-sm">
-                        <input type="text" className="form-control input-group-prepend" defaultValue={this.props.amount} ref="amount" />
+                        <input type="text" className="form-control input-group-prepend" defaultValue={this.props.record.amount} ref="amount" />
                     </div>
                 </td>
                 <td>
