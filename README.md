@@ -6,7 +6,7 @@
 
 ### 在线预览
 
-https://bgrc.github.io/js-full-stack/react-state-props-life/preview/
+https://bgrc.github.io/react-vue-full-stack/counters/preview/
 
 ### 技术栈
 
@@ -28,7 +28,7 @@ React
 
 ### 在线预览
 
-https://bgrc.github.io/js-full-stack/react-records/preview/
+https://bgrc.github.io/react-vue-full-stack/react-records/preview/
 
 ### 技术栈
 
