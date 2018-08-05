@@ -50,22 +50,20 @@ export default class RecordForm extends Component {
 
     render() {
         return (
-            <div className="row">
-                <form className="form-inline mt-3" onSubmit={this.handleSubmit}>
-                    <div className="form-group ml-3">
-                        <input className="form-control " onChange={this.handleChange} type="text" value={this.state.date} placeholder="date" name="date" required />
-                    </div>
-                    <div className="form-group ml-3">
-                        <input className="form-control" onChange={this.handleChange} type="text" value={this.state.title} placeholder="title" name="title" required />
-                    </div>
-                    <div className="form-group ml-3">
-                        <input className="form-control" onChange={this.handleChange} type="number" value={this.state.amount} placeholder="amount" name="amount" required />
-                    </div>
-                    <div className="form-group ml-3">
-                        <button className="btn btn-primary" type="submit">Create Record</button>
-                    </div>
-                </form>
-            </div>
+            <form className="form-inline mt-3" onSubmit={this.handleSubmit} style={{ marginLeft: -16 }}>
+                <div className="form-group ml-3">
+                    <input className="form-control " onChange={this.handleChange} type="text" value={this.state.date} placeholder="date" name="date" required />
+                </div>
+                <div className="form-group ml-3">
+                    <input className="form-control" onChange={this.handleChange} type="text" value={this.state.title} placeholder="title" name="title" required />
+                </div>
+                <div className="form-group ml-3">
+                    <input className="form-control" onChange={this.handleChange} type="number" value={this.state.amount} placeholder="amount" name="amount" required />
+                </div>
+                <div className="form-group ml-3">
+                    <button className="btn btn-primary" type="submit">Create Record</button>
+                </div>
+            </form>
         )
     }
 }

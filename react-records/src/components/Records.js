@@ -85,7 +85,7 @@ export default class Records extends Component {
     }, 0)
   }
 
-  total() {
+  balance() {
     return this.income() + this.debit()
   }
 
@@ -113,7 +113,7 @@ export default class Records extends Component {
           <div className="row mt-3">
             <AmountBox title="Income" bgColor="success" amount={this.income()} />
             <AmountBox title="Debit" bgColor="danger" amount={this.debit()} />
-            <AmountBox title="Total" bgColor="info" amount={this.total()} />
+            <AmountBox title="Balance" bgColor="info" amount={this.balance()} />
           </div>
           <RecordForm handleNewRecord={this.addRecord} />
           <table className="table mt-3">
