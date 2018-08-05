@@ -1,14 +1,12 @@
-## 案例一、计数器
+## [案例一、计数器](./react-counters)
 
-### 演示
-
-<p align='center'>
-<img src='./images/counter.gif' width='600' alt='npm start'>
-</p>
-
-### 在线预览
+### 预览
 
 https://bgrc.github.io/react-vue-full-stack/react-counters/preview/
+
+<p align='center'>
+<img src='./images/counter.gif'>
+</p>
 
 ### 技术栈
 
@@ -22,17 +20,15 @@ React
 
 - 组件的生命周期
 
-## 案例二、小记账本
+## [案例二、小记账本](./react-records)
 
-### 演示
-
-<p align='center'>
-<img src='./images/records.gif' width='600' alt='npm start'>
-</p>
-
-### 在线预览
+### 预览
 
 https://bgrc.github.io/react-vue-full-stack/react-records/preview/
+
+<p align='center'>
+<img src='./images/records.gif'>
+</p>
 
 ### 技术栈
 
