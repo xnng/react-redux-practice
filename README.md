@@ -2,7 +2,7 @@
 
 ### 演示
 
-![](../images/counter.gif)
+![](./images/counter.gif)
 
 ### 在线预览
 
