@@ -42,6 +42,8 @@ React + Axios + Bootstrap 4 + Font Awesome + MockAPI
 
 - 如何使用 onChange 或 refs 获取表单数据
 
+- 如何在页面上显示 Loading 和 Error 状态
+
 - 如何创建无状态组件
 
 - 如何使用 Axios 发送 Ajax
