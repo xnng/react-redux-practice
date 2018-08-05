@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import * as RecordsAPI from '../utils/RecordsAPI'
 
 export default class RecordTable extends Component {
 
@@ -17,6 +18,20 @@ export default class RecordTable extends Component {
         })
     }
 
+    handleEdit = () => {
+        const data = {
+            date: this.refs.date.value,
+            title: this.refs.title.value,
+            amount: Number.parseInt(this.refs.amount.value, 0)
+        }
+
+        RecordsAPI.update(this.props.id, data).then(
+            response => console.log(response.data)
+        ).catch(
+            error => console.log(error.message)
+        )
+    }
+
 
     recordRow() {
         return (
@@ -26,8 +41,12 @@ export default class RecordTable extends Component {
                 <td>{this.props.amount}</td>
                 <td>
                     <div className="btn-group">
-                        <button type="button" className="btn btn-sm btn-info" onClick={this.handleToggle}><i className="fa fa-pencil" /></button>
-                        <button type="button" className="btn btn-sm btn-danger"><i className="fa fa-trash" /></button>
+                        <button type="button" className="btn btn-sm btn-info" onClick={this.handleToggle}>
+                            <i className="fa fa-pencil" />
+                        </button>
+                        <button type="button" className="btn btn-sm btn-danger">
+                            <i className="fa fa-trash" />
+                        </button>
                     </div>
                 </td>
             </tr>
@@ -39,23 +58,27 @@ export default class RecordTable extends Component {
             <tr>
                 <td>
                     <div className="input-group input-group-sm">
-                        <input type="text" className="form-control input-group-prepend" defaultValue={this.props.date} />
+                        <input type="text" className="form-control input-group-prepend" defaultValue={this.props.date} ref="date" />
                     </div>
                 </td>
                 <td>
                     <div className="input-group input-group-sm">
-                        <input type="text" className="form-control input-group-prepend" defaultValue={this.props.title} />
+                        <input type="text" className="form-control input-group-prepend" defaultValue={this.props.title} ref="title" />
                     </div>
                 </td>
                 <td>
                     <div className="input-group input-group-sm">
-                        <input type="text" className="form-control input-group-prepend" defaultValue={this.props.amount} />
+                        <input type="text" className="form-control input-group-prepend" defaultValue={this.props.amount} ref="amount" />
                     </div>
                 </td>
                 <td>
                     <div className="btn-group">
-                        <button type="button" className="btn btn-sm btn-success"><i className="fa fa-check" /></button>
-                        <button type="button" className="btn btn-sm btn-secondary" onClick={this.handleToggle}><i className="fa fa-close" /></button>
+                        <button type="button" className="btn btn-sm btn-success" onClick={this.handleEdit}>
+                            <i className="fa fa-check" />
+                        </button>
+                        <button type="button" className="btn btn-sm btn-secondary" onClick={this.handleToggle}>
+                            <i className="fa fa-close" />
+                        </button>
                     </div>
                 </td>
             </tr>
