@@ -32,11 +32,11 @@ https://bgrc.github.io/react-vue-full-stack/react-records/preview/
 
 - 如何使用 Font Awesome 添加小图标
 
-- 如何使用 [onChange](./react-reacords/src/components/RecordForm.js#L16-L24) 或 [refs](./react-reacords/src/components/RecordTable.js#L22-L26) 获取表单数据
+- 如何使用 [onChange](./react-records/src/components/RecordForm.js#L16-L24) 或 [refs](./react-records/src/components/RecordTable.js#L22-L26) 获取表单数据
 
-- 如何在页面上显示 [Loading 和 Error](./react-reacords/src/components/Records.js#L93-L107) 状态
+- 如何在页面上显示 [Loading 和 Error](./react-records/src/components/Records.js#L93-L107) 状态
 
-- 如何创建[无状态组件](./react-reacords/src/components/AmountBox.js#L1-L18)
+- 如何创建[无状态组件](./react-records/src/components/AmountBox.js#L1-L18)
 
 - 如何使用 [prop-types](./react-records/src/components/RecordTable.js#L109-L114) 进行属性类型检查
 
