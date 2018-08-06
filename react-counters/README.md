@@ -1,3 +1,15 @@
-## 从计数器 demo 入门 React
+## 如何运行
 
-- 详见文章 [React 入门](https://bgrc.fun/posts/react2/)
+```sh
+$ cd react-counters
+$ yarn
+$ yarn start
+```
+
+or
+
+```sh
+$ cd react-counters
+$ npm install
+$ npm start
+```

@@ -1,3 +1,19 @@
+## 如何运行
+
+```sh
+$ cd react-records
+$ yarn
+$ yarn start
+```
+
+or
+
+```sh
+$ cd react-records
+$ npm install
+$ npm start
+```
+
 ## 素材
 
 - 本例子中用到的 [Font Awesome 图标](./src/utils/Icons.md)
