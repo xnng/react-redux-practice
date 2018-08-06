@@ -21,9 +21,7 @@ export default class RecordForm extends Component {
             obj["" + name] = event.target.value,
             obj
         ))
-
     }
-
 
     handleSubmit = (event) => {
         event.preventDefault();

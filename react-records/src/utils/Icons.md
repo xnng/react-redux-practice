@@ -9,6 +9,6 @@ CDN: `<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.mi
 ×         <i className="fa fa-close" />
 Edit      <i className="fa fa-pencil" />
 Trash     <i className="fa fa-trash" />
-Loading   <i className="fa fa-spinner fa-spin">
-Error     <i className="fa fa-warning"/>
+Loading   <i className="fa fa-spinner fa-spin" />
+Error     <i className="fa fa-warning" />
 ```

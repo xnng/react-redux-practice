@@ -1,4 +1,4 @@
-## [案例一、计数器](./react-counters)
+## [Demo 1、计数器](./react-counters)（React）
 
 ### 预览
 
@@ -8,11 +8,7 @@ https://bgrc.github.io/react-vue-full-stack/react-counters/preview/
 <img src='./images/counter.gif'>
 </p>
 
-### 技术栈
-
-React
-
-### 技术点
+### 要点
 
 - 如何创建一个 React 组件
 
@@ -20,7 +16,7 @@ React
 
 - 组件的生命周期
 
-## [案例二、小记账本](./react-records)
+## [Demo 2、小记账本](./react-records)（React + Axios + Bootstrap 4 + Font Awesome + MockAPI）
 
 ### 预览
 
@@ -30,28 +26,22 @@ https://bgrc.github.io/react-vue-full-stack/react-records/preview/
 <img src='./images/records.gif'>
 </p>
 
-### 技术栈
-
-React + Axios + Bootstrap 4 + Font Awesome + MockAPI
-
-### 技术点
+### 要点
 
 - 如何使用 bootstrap 4 的 [sizing](https://getbootstrap.com/docs/4.0/utilities/sizing/) 和 [spacing](https://getbootstrap.com/docs/4.0/utilities/spacing/) 调整容器的位置和大小
 
 - 如何使用 Font Awesome 添加小图标
 
-- 如何使用 onChange 或 refs 获取表单数据
+- 如何使用 [onChange](./react-reacords/src/components/RecordForm.js#L16-L24) 或 [refs](./react-reacords/src/components/RecordTable.js#L22-L26) 获取表单数据
 
-- 如何在页面上显示 Loading 和 Error 状态
+- 如何在页面上显示 [Loading 和 Error](./react-reacords/src/components/Records.js#L93-L107) 状态
 
-- 如何创建无状态组件
+- 如何创建[无状态组件](./react-reacords/src/components/AmountBox.js#L1-L18)
 
-- 如何使用 prop-types 进行属性类型检查
+- 如何使用 [prop-types](./react-records/src/components/RecordTable.js#L109-L114) 进行属性类型检查
 
-- 如何使用 Axios 发送 Ajax
+- [如何使用 Axios 发送 Ajax，并提取方法到工具类](./react-records/src/utils/RecordsAPI.js#L1-L15)
 
-- 如何提取 Axios 的方法到工具类
+- 如何提取 [API 地址](./react-records/src/utils/RecordsAPI.js#L3)到[环境变量文件](./react-records/.env#L1)
 
-- 如何提取 API 地址到环境变量文件
-
-- 如何[更新](https://redux.js.org/recipes/structuringreducers/immutableupdatepatterns#updating-an-item-in-an-array)和[删除](https://redux.js.org/recipes/structuringreducers/immutableupdatepatterns#inserting-and-removing-items-in-arrays)数组中的对象
+- 如何[更新](/react-records/src/components/Records.js#L39-L57)和[删除](./react-records/src/components/Records.js#L59-L66)数组中的对象（[参考](https://redux.js.org/recipes/structuringreducers/immutableupdatepatterns#updating-an-item-in-an-array)）
