@@ -1,8 +1,8 @@
-var counter = function (arr) {
+const counter = function (arr) {
     return `There are ${arr.length} elements in the array`
 }
 
-var adder = function (a, b) {
+const adder = function (a, b) {
     return `the sum of two numbers is ${a + b}`
 }
 

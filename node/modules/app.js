@@ -1,4 +1,4 @@
-var func = require('./counter');
+const func = require('./counter');
 
 console.log(func.counter(['a', 'b']))
 
