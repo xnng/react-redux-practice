@@ -10,11 +10,11 @@ https://bgrc.github.io/react-vue-full-stack/react-counters/preview/
 
 ### 要点
 
-- 如何创建一个 React 组件
+- [如何创建一个 React 组件](https://bgrc.fun/posts/react2/#%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA-React-%E7%BB%84%E4%BB%B6)
 
-- 组件之间如何传值
+- [组件之间如何传值](https://bgrc.fun/posts/react2/#React-%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E5%A6%82%E4%BD%95%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE)
 
-- 组件的生命周期
+- [组件的生命周期](https://bgrc.fun/posts/react2/#React-%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)
 
 ## [Demo 2、小记账本](./react-records)（React + Axios + Bootstrap 4 + Font Awesome + MockAPI）
 
@@ -36,12 +36,12 @@ https://bgrc.github.io/react-vue-full-stack/react-records/preview/
 
 - 如何在页面上显示 [Loading 和 Error](./react-records/src/components/Records.js#L93-L107) 状态
 
-- 如何创建[无状态组件](./react-records/src/components/AmountBox.js#L1-L18)
+- 如何创建 [无状态组件](./react-records/src/components/AmountBox.js#L1-L18)
 
 - 如何使用 [prop-types](./react-records/src/components/RecordTable.js#L109-L114) 进行属性类型检查
 
 - [如何使用 Axios 发送 Ajax，并提取方法到工具类](./react-records/src/utils/RecordsAPI.js#L1-L15)
 
-- 如何提取 [API 地址](./react-records/src/utils/RecordsAPI.js#L3)到[环境变量文件](./react-records/.env#L1)
+- 如何提取 [API 地址](./react-records/src/utils/RecordsAPI.js#L3) 到 [环境变量文件](./react-records/.env#L1)
 
-- 如何[更新](/react-records/src/components/Records.js#L39-L57)和[删除](./react-records/src/components/Records.js#L59-L66)数组中的对象（[参考](https://redux.js.org/recipes/structuringreducers/immutableupdatepatterns#updating-an-item-in-an-array)）
+- 如何 [更新](/react-records/src/components/Records.js#L39-L57) 和 [删除](./react-records/src/components/Records.js#L59-L66) 数组中的对象（[参考](https://redux.js.org/recipes/structuringreducers/immutableupdatepatterns#updating-an-item-in-an-array)）
