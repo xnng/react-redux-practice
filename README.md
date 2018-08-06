@@ -30,7 +30,7 @@ https://bgrc.github.io/react-vue-full-stack/react-records/preview/
 
 - 如何使用 bootstrap 4 的 [sizing](https://getbootstrap.com/docs/4.0/utilities/sizing/) 和 [spacing](https://getbootstrap.com/docs/4.0/utilities/spacing/) 调整容器的位置和大小
 
-- 如何使用 Font Awesome 添加小图标
+- 如何使用 [Font Awesome](./react-records/src/utils/Icons.md) 添加小图标
 
 - 如何使用 [onChange](./react-records/src/components/RecordForm.js#L16-L24) 或 [refs](./react-records/src/components/RecordTable.js#L22-L26) 获取表单数据
 
