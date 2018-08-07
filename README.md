@@ -45,3 +45,23 @@ https://bgrc.github.io/react-vue-full-stack/react-records/preview/
 - 如何提取 [API 地址](./react-records/src/utils/RecordsAPI.js#L3) 到 [环境变量文件](./react-records/.env#L1)
 
 - 如何 [更新](/react-records/src/components/Records.js#L39-L57) 和 [删除](./react-records/src/components/Records.js#L59-L66) 数组中的对象（[参考](https://redux.js.org/recipes/structuringreducers/immutableupdatepatterns#updating-an-item-in-an-array)）
+
+## [Demo 3、React 页面导航](./react-records)（React + React-Router）
+
+### 预览
+
+https://bgrc.github.io/react-vue-full-stack/react-router/preview/
+
+<p align='center'>
+<img src='./images/react-router.gif'>
+</p>
+
+### 要点
+
+- [什么是单页面应用](./react-router/README.md)
+
+- 如何 [配置](./react-router/src/App.js#L12-L19) 组件 [路由](./react-router/src/components/Navbar.js#L17)
+
+- [如何通过 onClick 设置路由](./react-router/src/pages/Documentation.js#L5-L8)
+
+- 了解[hashHistory 和 browserHistory 的区别](https://github.com/LoeiFy/Recordum/issues/15)
