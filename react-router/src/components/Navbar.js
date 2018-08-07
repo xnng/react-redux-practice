@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-export default class Nav extends Component {
+export default class Navbar extends Component {
+
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="navbar-brand">
                     <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg"
                         width="30" height="30" className="d-inline-block align-top" />&nbsp;
-                     Bootstrap
-        </div>
+                Bootstrap
+                </div>
                 <div className="collapse navbar-collapse">
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li className="nav-item active">
