@@ -64,4 +64,4 @@ https://bgrc.github.io/react-vue-full-stack/react-router/preview/
 
 - [如何通过 onClick 设置路由](./react-router/src/pages/Documentation.js#L5-L8)
 
-- 了解[hashHistory 和 browserHistory 的区别](https://github.com/LoeiFy/Recordum/issues/15)
+- 了解 [hashHistory 和 browserHistory 的区别](https://github.com/LoeiFy/Recordum/issues/15)
