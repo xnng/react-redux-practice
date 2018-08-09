@@ -1,9 +1,8 @@
 import { INCREMENT, DECREMENT } from '../constants'
 
-export const increment = (name) => {
+export const increment = () => {
   return {
-    type: INCREMENT,
-    name
+    type: INCREMENT
   }
 }
 
