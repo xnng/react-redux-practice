@@ -10,7 +10,7 @@ class App extends Component {
       <div className="container">
         <h1 className="text-center mt-5">{this.props.counter}</h1>
         <p className="text-center">
-          <button onClick={() => dispatch(increment())} className="btn btn-primary mr-2">Increase</button>
+          <button onClick={() => dispatch(increment('bgrc'))} className="btn btn-primary mr-2">Increase</button>
           <button onClick={() => dispatch(decrement())} className="btn btn-danger my-2">Decrease</button>
         </p>
       </div>
