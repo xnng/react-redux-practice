@@ -1,28 +1,17 @@
 import React, { Component } from 'react';
-import { createStore } from 'redux';
+import { connect } from 'react-redux';
 import { decrement, increment } from './actions';
-import reducer from './reducer/Counter';
-import { connect } from 'react-redux'
-
-export const store = createStore(reducer)
 
 class App extends Component {
 
-  onIncrement = () => {
-    store.dispatch(increment())
-  }
-
-  onDecrement = () => {
-    store.dispatch(decrement())
-  }
-
   render() {
+    const { dispatch } = this.props;
     return (
       <div className="container">
         <h1 className="text-center mt-5">{this.props.counter}</h1>
         <p className="text-center">
-          <button onClick={this.onIncrement} className="btn btn-primary mr-2">Increase</button>
-          <button onClick={this.onDecrement} className="btn btn-danger my-2">Decrease</button>
+          <button onClick={() => dispatch(increment())} className="btn btn-primary mr-2">Increase</button>
+          <button onClick={() => dispatch(decrement())} className="btn btn-danger my-2">Decrease</button>
         </p>
       </div>
     );
@@ -30,8 +19,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  counter: state
+  counter: state.counter
 })
-
 
 export default connect(mapStateToProps)(App);
