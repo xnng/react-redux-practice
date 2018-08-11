@@ -1,11 +1,19 @@
-## [Demo 1、计数器](./react-counters)（React）
+## 目录
+
+- [React 入门之计数器](#demo-1计数器react)
+
+- [使用 React + Axios + MockAPI 进行 CRUD 操作，初步体验前后端分离项目](#demo-2小记账本react--axios--bootstrap-4--font-awesome--mockapi)
+
+- [使用 React-Router 来解决单页面应用中的路由问题](#demo-3react-页面导航react--react-router)
+
+## [Demo 1、计数器（React）](./react-counters)
 
 ### 预览
 
 https://bgrc.github.io/react-vue-full-stack/react-counters/preview/
 
 <p align='center'>
-<img src='./images/counter.gif'>
+<img src='./images/counter.gif' width='800px'>
 </p>
 
 ### 要点
@@ -16,14 +24,14 @@ https://bgrc.github.io/react-vue-full-stack/react-counters/preview/
 
 - [组件的生命周期](https://bgrc.fun/posts/react2/#React-%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)
 
-## [Demo 2、小记账本](./react-records)（React + Axios + Bootstrap 4 + Font Awesome + MockAPI）
+## [Demo 2、小记账本（React + Axios + Bootstrap 4 + Font Awesome + MockAPI）](./react-records)
 
 ### 预览
 
 https://bgrc.github.io/react-vue-full-stack/react-records/preview/
 
 <p align='center'>
-<img src='./images/records.gif'>
+<img src='./images/records.gif' width='800px'>
 </p>
 
 ### 要点
@@ -46,14 +54,14 @@ https://bgrc.github.io/react-vue-full-stack/react-records/preview/
 
 - 如何 [更新](/react-records/src/components/Records.js#L39-L57) 和 [删除](./react-records/src/components/Records.js#L59-L66) 数组中的对象（[参考](https://redux.js.org/recipes/structuringreducers/immutableupdatepatterns#updating-an-item-in-an-array)）
 
-## [Demo 3、React 页面导航](./react-records)（React + React-Router）
+## [Demo 3、React 页面导航（React + React-Router）](./react-records)
 
 ### 预览
 
 https://bgrc.github.io/react-vue-full-stack/react-router/preview/
 
 <p align='center'>
-<img src='./images/react-router.gif'>
+<img src='./images/react-router.gif' width='800px'>
 </p>
 
 ### 要点
