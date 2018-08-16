@@ -6,7 +6,7 @@
 
 - [使用 React-Router 来解决单页面应用中的路由问题](#demo-3react-页面导航react--react-router)
 
-- [Redux 入门](#demo-3Redux-计数器react--redux)
+- [Redux 入门](#demo-4redux-计数器react--redux)
 
 ## [Demo 1、计数器（React）](./react-counters)
 
@@ -81,7 +81,7 @@ https://bgrc.github.io/react-vue-full-stack/react-router/preview/
 ### 预览
 
 <p align='center'>
-<img src='./images/redux.gif' width='800px'>
+<img src='./images/redux.gif'>
 </p>
 
 ### 要点
