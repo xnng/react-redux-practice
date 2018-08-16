@@ -1,33 +1,46 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux';
-import * as types from './actions';
+import React, { Component } from "react";
+import store from "./Store";
 
-class App extends Component {
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count: store.getState()
+    };
+  }
+
+  onIncrement = () => {
+    store.dispatch({
+      type: "INCREMENT"
+    });
+  };
+
+  onDecrement = () => {
+    store.dispatch({
+      type: "DECREMENT"
+    });
+  };
 
   render() {
-    const { increment, decrement } = this.props;
-    console.log(this.props)
+    store.subscribe(() =>
+      this.setState({
+        count: store.getState()
+      })
+    );
+
     return (
       <div className="container">
-        <h1 className="text-center mt-5">{this.props.counter}</h1>
+        <h1 className="text-center mt-5">{store.getState()}</h1>
         <p className="text-center">
-          <button onClick={() => increment()} className="btn btn-primary mr-2">Increase</button>
-          <button onClick={() => decrement()} className="btn btn-danger my-2">Decrease</button>
+          <button className="btn btn-primary mr-2" onClick={this.onIncrement}>
+            Increase
+          </button>
+          <button className="btn btn-danger my-2" onClick={this.onDecrement}>
+            Decrease
+          </button>
         </p>
       </div>
     );
   }
 }
-
-const mapStateToProps = (state) => ({
-  counter: state.counter
-})
-
-App.propTypes = {
-  counter: PropTypes.number.isRequired,
-  increment: PropTypes.func.isRequired,
-  decrement: PropTypes.func.isRequired,
-}
-
-export default connect(mapStateToProps, types)(App);

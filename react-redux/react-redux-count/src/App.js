@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux';
-import * as types from './actions';
 
 class App extends Component {
 
@@ -19,15 +16,3 @@ class App extends Component {
     );
   }
 }
-
-const mapStateToProps = (state) => ({
-  counter: state.counter
-})
-
-App.propTypes = {
-  counter: PropTypes.number.isRequired,
-  increment: PropTypes.func.isRequired,
-  decrement: PropTypes.func.isRequired,
-}
-
-export default connect(mapStateToProps, types)(App);
