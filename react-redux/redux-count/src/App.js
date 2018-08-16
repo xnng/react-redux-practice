@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import store from "./Store";
+import * as Action from './Action'
 
 export default class App extends Component {
   constructor(props) {
@@ -11,15 +12,11 @@ export default class App extends Component {
   }
 
   onIncrement = () => {
-    store.dispatch({
-      type: "INCREMENT"
-    });
+    store.dispatch(Action.increment());
   };
 
   onDecrement = () => {
-    store.dispatch({
-      type: "DECREMENT"
-    });
+    store.dispatch(Action.decrement());
   };
 
   render() {
