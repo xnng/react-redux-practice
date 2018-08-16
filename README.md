@@ -86,10 +86,10 @@ https://bgrc.github.io/react-vue-full-stack/react-router/preview/
 
 ### 要点
 
-- [为什么要使用 Redux]()
+- [为什么要使用 Redux](https://www.bgrc.fun/posts/react3/index.html#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8-Redux)
 
-- [如何使用 Redux]()
+- [如何使用 Redux](https://www.bgrc.fun/posts/react3/index.html#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Redux)
 
-- [如何使用 react-redux]()
+- [如何使用 react-redux](https://www.bgrc.fun/posts/react3/index.html#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-react-redux)
 
-- [如何使用多个 Reducer]()
+- [如何使用多个 Reducer](https://www.bgrc.fun/posts/react3/index.html#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AA-reducer)
