@@ -6,6 +6,8 @@
 
 - [使用 React-Router 来解决单页面应用中的路由问题](#demo-3react-页面导航react--react-router)
 
+- [Redux 入门](#demo-3Redux-计数器react--redux)
+
 ## [Demo 1、计数器（React）](./react-counters)
 
 ### 预览
@@ -73,3 +75,21 @@ https://bgrc.github.io/react-vue-full-stack/react-router/preview/
 - [如何通过 onClick 设置路由](./react-router/src/pages/Documentation.js#L5-L8)
 
 - 了解 [hashHistory 和 browserHistory 的区别](https://github.com/LoeiFy/Recordum/issues/15)
+
+## [Demo 4、Redux 计数器（React + Redux）](./react-redux)
+
+### 预览
+
+<p align='center'>
+<img src='./images/redux.gif' width='800px'>
+</p>
+
+### 要点
+
+- [为什么要使用 Redux]()
+
+- [如何使用 Redux]()
+
+- [如何使用 react-redux]()
+
+- [如何使用多个 Reducer]()
