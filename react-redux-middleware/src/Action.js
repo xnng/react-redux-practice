@@ -1,13 +1,17 @@
-import * as ActionTypes from './ActionType';
+import * as ActionTypes from "./ActionType";
 
 export const increment = () => {
-  return {
-      type: ActionTypes.INCREMENT
+  return dispatch => {
+    setTimeout(() => {
+      dispatch({
+        type: ActionTypes.INCREMENT
+      });
+    },2000);
   };
 };
 
 export const decrement = () => {
   return {
-      type: ActionTypes.DECREMENT
+    type: ActionTypes.DECREMENT
   };
 };
