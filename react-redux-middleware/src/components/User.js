@@ -2,13 +2,24 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getUser } from "../Action";
 
-export class User extends Component {
+class User extends Component {
   render() {
-    const { getUser, user } = this.props;
-    
+    const { getUser } = this.props;
+    const { error, isFetching, user } = this.props.user;
+
+    let data;
+
+    if (error) {
+      data = error;
+    } else if (isFetching) {
+      data = "Loading...";
+    } else {
+      data = user.email;
+    }
+
     return (
       <div>
-        <h1 className="text-center mt-5">{user.email}</h1>
+        <h1 className="jumbotron-heading text-center">{data}</h1>
         <p className="text-center">
           <button onClick={() => getUser()} className="btn btn-success mr-2">
             get email
