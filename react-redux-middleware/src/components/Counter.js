@@ -4,11 +4,12 @@ import * as actions from "../actions";
 
 class Counter extends Component {
   render() {
-    const { increment, decrement, count } = this.props;
+    const { increment, decrement } = this.props;
+    const { initCount } = this.props.count
 
     return (
       <div className="text-center">
-        <h1 className="mt-5">{count}</h1>
+        <h1 className="mt-5">{initCount}</h1>
         <button onClick={() => increment()} className="btn btn-success mr-3">
           Increment
         </button>

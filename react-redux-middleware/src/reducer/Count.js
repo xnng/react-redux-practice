@@ -1,14 +1,20 @@
 import * as types from "../constants";
 
-const initialState = 0;
+const initialState = {
+  initCount: 0
+};
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case types.INCREMENT:
-      return state + 1;
+      return {
+        initCount: state.initCount + 1
+      };
 
     case types.DECREMENT:
-      return state - 1;
+      return {
+        initCount: state.initCount - 1
+      };
 
     default:
       return state;
