@@ -7,25 +7,34 @@ class App extends Component {
     super(props);
 
     this.state = {
-      text: ""
+      text: "",
+      time: ""
     };
   }
 
-  changeValue = e => {
+  changeText = e => {
     this.setState({
       text: e.target.value
     });
   };
 
+  changeTime = e => {
+    this.setState({
+      time: e.target.value
+    });
+  };
+
   renderReminders() {
-    const { reminders } = this.props
+    const { reminders } = this.props;
     return (
       <ul className="list-group mt-3 col-lg-6">
         {reminders.map(reminder => {
           return (
             <li key={reminder.id} className="list-group-item">
               <div>{reminder.text}</div>
-              <div><em>time</em></div>
+              <div>
+                <em>{reminder.date}</em>
+              </div>
             </li>
           );
         })}
@@ -33,26 +42,41 @@ class App extends Component {
     );
   }
 
-  render() {
-    const { addReminder } = this.props;
+  addReminder(e) {
+    e.preventDefault();
+    if (this.state.text && this.state.time) {
+      this.props.addReminder(this.state.text, this.state.time);
+    } else {
+      alert("请填写完整内容");
+    }
+  }
 
+  render() {
     return (
       <div className="d-flex flex-column align-items-center mt-5">
         <h1>Reminder</h1>
-        <div className="form-inline mt-3">
+        <form className="form-inline mt-3">
           <input
             type="text"
             className="form-control"
             placeholder="I have to..."
-            onChange={this.changeValue}
+            onChange={this.changeText}
+            required
+          />
+          <input
+            type="datetime-local"
+            className="form-control ml-2"
+            onChange={this.changeTime}
+            required
           />
           <button
-            onClick={() => addReminder(this.state.text)}
+            onClick={e => this.addReminder(e)}
             className="btn btn-success ml-4"
+            // type="submit"
           >
             Add Reminder
           </button>
-        </div>
+        </form>
         {this.renderReminders()}
       </div>
     );

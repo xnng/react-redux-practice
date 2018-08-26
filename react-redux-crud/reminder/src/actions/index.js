@@ -1,6 +1,7 @@
 import * as types from "../constants";
 
-export const addReminder = text => ({
+export const addReminder = (text, date) => ({
   type: types.ADD_REMINDER,
-  text
+  text,
+  date
 });

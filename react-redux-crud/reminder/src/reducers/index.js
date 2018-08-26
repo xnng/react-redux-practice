@@ -5,7 +5,8 @@ const initialState = [];
 const reminder = action => {
   return {
     text: action.text,
-    id: Math.random()
+    id: Math.random(),
+    date: action.date
   };
 };
 
