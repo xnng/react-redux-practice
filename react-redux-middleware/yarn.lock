@@ -5723,6 +5723,10 @@ redux-logger@^3.0.6:
   dependencies:
     deep-diff "^0.3.5"
 
+redux-promise-middleware@^5.1.1:
+  version "5.1.1"
+  resolved "http://registry.npm.taobao.org/redux-promise-middleware/download/redux-promise-middleware-5.1.1.tgz#37689339a58a33d1fda675ed1ba2053a2d196b8d"
+
 redux-thunk@^2.3.0:
   version "2.3.0"
   resolved "http://registry.npm.taobao.org/redux-thunk/download/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"

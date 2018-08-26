@@ -8,25 +8,26 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case types.FETCH_USER_SUCCESS:
+    case types.LOAD_USER_FULFILLED:
+    console.log(action)
       return {
-        initName: action.user.name,
+        initName: action.payload.data[0].name,
         isFetching: false,
         error: null
       };
 
-    case types.FETCH_USER_REQUEST:
+    case types.LOAD_USER_PENDING:
       return {
         initName: null,
         isFetching: true,
         error: null
       };
 
-    case types.FETCH_USER_FAILURE:
+    case types.LOAD_USER_REJECTED:
       return {
         initName: null,
         isFetching: false,
-        error: action.error
+        error: action.payload.response.data
       };
 
     default:

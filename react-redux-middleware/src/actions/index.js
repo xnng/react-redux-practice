@@ -10,35 +10,39 @@ export const decrement = () => {
 };
 
 export const get_user = () => {
-  return dispatch => {
-    dispatch(fetch_user_request());
-    axios
-      .get(types.API)
-      .then(res => {
-        dispatch(fetch_user_success(res.data[0]));
-      })
-      .catch(error => {
-        dispatch(fetch_user_failure(error.message));
-      });
+  // return dispatch => {
+  //   dispatch(fetch_user_request());
+  //   axios
+  //     .get(types.API)
+  //     .then(res => {
+  //       dispatch(fetch_user_success(res.data[0]));
+  //     })
+  //     .catch(error => {
+  //       dispatch(fetch_user_failure(error.message));
+  //     });
+  // };
+  return {
+    type: types.LOAD_USER,
+    payload: axios.get(types.API)
   };
 };
 
-const fetch_user_success = user => {
-  return {
-    type: types.FETCH_USER_SUCCESS,
-    user
-  };
-};
+// const fetch_user_success = user => {
+//   return {
+//     type: types.FETCH_USER_SUCCESS,
+//     user
+//   };
+// };
 
-const fetch_user_request = () => {
-  return {
-    type: types.FETCH_USER_REQUEST
-  };
-};
+// const fetch_user_request = () => {
+//   return {
+//     type: types.FETCH_USER_REQUEST
+//   };
+// };
 
-const fetch_user_failure = error => {
-  return {
-    type: types.FETCH_USER_FAILURE,
-    error
-  };
-};
+// const fetch_user_failure = error => {
+//   return {
+//     type: types.FETCH_USER_FAILURE,
+//     error
+//   };
+// };
