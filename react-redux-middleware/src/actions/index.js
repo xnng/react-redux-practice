@@ -13,7 +13,7 @@ export const get_user = () => {
   return dispatch => {
     dispatch(fetch_user_request());
     axios
-      .get("https://5b80183d97d8e500144f2cf7.mockapi.io/user")
+      .get(types.API)
       .then(res => {
         dispatch(fetch_user_success(res.data[0]));
       })

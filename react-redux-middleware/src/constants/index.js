@@ -1,3 +1,5 @@
+export const API = 'https://5b80183d97d8e500144f2cf7.mockapi.io/user'
+
 export const INCREMENT = 'INCREMENT';
 
 export const DECREMENT = 'DECREMENT';
