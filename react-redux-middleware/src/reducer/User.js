@@ -9,7 +9,6 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case types.LOAD_USER_FULFILLED:
-    console.log(action)
       return {
         initName: action.payload.data[0].name,
         isFetching: false,
