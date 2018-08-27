@@ -5,3 +5,13 @@ export const addReminder = (text, date) => ({
   text,
   date
 });
+
+export const deleteReminder = (id) => ({
+  type: types.DELETE_REMINDER,
+  id
+})
+
+export const clearReminders = () => ({
+  type: types.CLEAR_REMINDERS,
+})
+

@@ -26,6 +26,23 @@ class App extends Component {
     });
   };
 
+  addReminder(e) {
+    e.preventDefault();
+    if (this.state.text && this.state.time) {
+      this.props.addReminder(this.state.text, this.state.time);
+    } else {
+      alert("请填写完整内容");
+    }
+  }
+
+  deleteReminder(id) {
+    this.props.deleteReminder(id);
+  }
+
+  clearReminders() {
+    this.props.clearReminders();
+  }
+
   renderReminders() {
     const { reminders } = this.props;
     return (
@@ -33,7 +50,12 @@ class App extends Component {
         {reminders.map(reminder => {
           return (
             <li key={reminder.id} className="list-group-item">
-              <div>{reminder.text}</div>
+              <div className="d-flex flex-row justify-content-between">
+                <h5>{reminder.text}</h5>
+                <div onClick={() => this.deleteReminder(reminder.id)}>
+                  <span>&#10008;</span>
+                </div>
+              </div>
               <div>
                 <em>{moment(new Date(reminder.date)).fromNow()}</em>
               </div>
@@ -42,15 +64,6 @@ class App extends Component {
         })}
       </ul>
     );
-  }
-
-  addReminder(e) {
-    e.preventDefault();
-    if (this.state.text && this.state.time) {
-      this.props.addReminder(this.state.text, this.state.time);
-    } else {
-      alert("请填写完整内容");
-    }
   }
 
   render() {
@@ -79,6 +92,12 @@ class App extends Component {
           </button>
         </form>
         {this.renderReminders()}
+        <button
+          onClick={() => this.clearReminders()}
+          className="btn btn-danger mt-3"
+        >
+          Clear Reminders
+        </button>
       </div>
     );
   }
@@ -86,7 +105,9 @@ class App extends Component {
 
 App.propTypes = {
   reminders: PropTypes.array.isRequired,
-  addReminder: PropTypes.func.isRequired
+  addReminder: PropTypes.func.isRequired,
+  deleteReminder: PropTypes.func.isRequired,
+  clearReminders: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
