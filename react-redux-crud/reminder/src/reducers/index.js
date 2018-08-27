@@ -1,8 +1,6 @@
 import * as types from "../constants";
 import Cookies from "js-cookie";
 
-const initialState = JSON.parse(Cookies.get("reminders")) || [];
-
 const reminder = action => {
   return {
     text: action.text,
@@ -11,7 +9,10 @@ const reminder = action => {
   };
 };
 
-export default (state = initialState, action) => {
+export default (
+  state = Cookies.get("reminders") ? JSON.parse(Cookies.get("reminders")) : [],
+  action
+) => {
   let reminders = [];
   switch (action.type) {
     case types.ADD_REMINDER:
