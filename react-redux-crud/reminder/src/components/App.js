@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions";
+import PropTypes from "prop-types";
+import moment from "moment";
 
 class App extends Component {
   constructor(props) {
@@ -33,7 +35,7 @@ class App extends Component {
             <li key={reminder.id} className="list-group-item">
               <div>{reminder.text}</div>
               <div>
-                <em>{reminder.date}</em>
+                <em>{moment(new Date(reminder.date)).fromNow()}</em>
               </div>
             </li>
           );
@@ -72,7 +74,6 @@ class App extends Component {
           <button
             onClick={e => this.addReminder(e)}
             className="btn btn-success ml-4"
-            // type="submit"
           >
             Add Reminder
           </button>
@@ -82,6 +83,11 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  reminders: PropTypes.array.isRequired,
+  addReminder: PropTypes.func.isRequired
+};
 
 const mapStateToProps = state => ({
   reminders: state
