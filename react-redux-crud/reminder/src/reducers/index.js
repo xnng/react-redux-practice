@@ -1,12 +1,7 @@
 import * as types from "../constants";
+import Cookies from "js-cookie";
 
-const initialState = [
-  {
-    date: "2018-08-15T23:02",
-    id: 0.414362169901018,
-    text: "test"
-  }
-];
+const initialState = JSON.parse(Cookies.get("reminders")) || [];
 
 const reminder = action => {
   return {
@@ -17,15 +12,21 @@ const reminder = action => {
 };
 
 export default (state = initialState, action) => {
+  let reminders = [];
   switch (action.type) {
     case types.ADD_REMINDER:
-      return [...state, reminder(action)];
+      reminders = [...state, reminder(action)];
+      Cookies.set("reminders", reminders);
+      return reminders;
 
     case types.DELETE_REMINDER:
-      return state.filter(reminder => reminder.id !== action.id);
+      reminders = state.filter(reminder => reminder.id !== action.id);
+      Cookies.set("reminders", reminders);
+      return reminders;
 
     case types.CLEAR_REMINDERS:
-      return [];
+      Cookies.set("reminders", reminders);
+      return reminders;
 
     default:
       return state;
